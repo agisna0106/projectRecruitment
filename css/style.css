@@ -1,0 +1,98 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: brown;
+}
+
+nav h2 {
+    margin-left: 20px;
+    color: white;
+    font-size: 20pt;
+}
+
+.keun {
+    font-size: 15pt;
+}
+
+nav button {
+    margin-right: 20px;
+    background-color: #fff;
+    color: brown;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.loginregister {
+    min-height: 100vh;
+    background-color: #f0f0f0f0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardlr {
+    width: 50vw;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.cardlr label {
+    margin-top: 10px;
+}
+
+.cardlr input {
+    border-radius: 50px;
+}
+
+.cardlr button {
+    margin-top: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+}
+
+.kopi-container {
+    min-height: 80vh;
+    max-width: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.kopi-card {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.kopi-card p {
+    background-color: brown;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.kopi-image {
+    width: 25vw;
+}
+
+@media (max-width: 500px) {
+    .kopi-container {
+        flex-direction: column;
+    }   
+}
