@@ -5,19 +5,15 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'db_kopikeliling');
 
-class Database {
+class Database
+{
     public $mysqli;
 
     public function __construct()
     {
         $this->mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        if($this->mysqli->connect_errno) {
+        if ($this->mysqli->connect_errno) {
             echo '<script>alert("Database tidak terhubung");</script>';
         }
-    }
-
-    public function __destruct()
-    {
-        $this->mysqli->close();
     }
 }

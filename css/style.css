@@ -102,12 +102,13 @@ nav button {
 .kopi-card p {
     background-color: brown;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px 10px;
 }
 
 .kopi-image {
     width: 25vw;
+    height: 30vh;
 }
 
 .btn-edit {
@@ -120,7 +121,7 @@ nav button {
 
 .btn-delete {
     color: #fff;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     background-color: #B04A3F;

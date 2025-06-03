@@ -1,26 +1,33 @@
 <?php
-    include 'header.php';
+include 'header.php';
+require_once '../controller/kopiKontroller.php';
+
+$kopi = new kopiKontroller();
+
+$datas = $kopi->select();
 ?>
 <section class="body">
-        <div class="action-bar">
-            <a href="tambahKopi.php"><button class="btn-add">+ Tambah Kopi</button></a>
-        </div>
-        <div class="kopi-container">
-            <?php
-            for($i=0; $i<10; $i++):
-            ?>
-                <div class="kopi-card">
-                    <img class="kopi-image" src="../assets/americano.png" alt="">
-                    <p>Americano</p>
-                    <div class="btn-edit-delete">    
-                        <button class="btn-edit" >Edit</button>
-                        <button class="btn-delete" >Hapus</button>
-                    </div>
+    <div class="action-bar">
+        <a href="tambahKopi.php"><button class="btn-add">+ Tambah Kopi</button></a>
+    </div>
+    <div class="kopi-container">
+        <?php
+        foreach ($datas as $data):
+        ?>
+            <div class="kopi-card">
+                <img class="kopi-image" src="../assets/<?= "$data[foto]" ?>" alt="">
+                <p><?= "$data[nama_kopi]" ?></p>
+                <p><?= "$data[harga]" ?></p>
+                <div class="btn-edit-delete">
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-delete">Hapus</button>
                 </div>
-            <?php endfor?>
-        </div>
-        
-    </section>
-    <footer></footer>
+            </div>
+        <?php endforeach ?>
+    </div>
+
+</section>
+<footer></footer>
 </body>
+
 </html>
