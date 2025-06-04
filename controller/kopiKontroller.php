@@ -31,6 +31,13 @@ class kopiKontroller
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function delete($id_kopi) {
+        $sql = "DELETE FROM kopi WHERE id_kopi='$id_kopi'";
+        $query = $this->db->mysqli->prepare($sql);
+        $query->execute() or die($this->db->mysqli->error);
+        echo "<script>alert('Data berhasil dihapus');</script>";
+    }
+
     public function __destruct()
     {
         $this->db->mysqli->close();

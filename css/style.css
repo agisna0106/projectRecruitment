@@ -119,12 +119,20 @@ nav button {
     background-color: #C97C5D;
 }
 
+.btn-edit:hover {
+    background-color: #a8684e;
+}
+
 .btn-delete {
     color: #fff;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     background-color: #B04A3F;
+}
+
+.btn-delete:hover {
+    background-color: #913d34;
 }
 
 .body_tambah_kopi {
