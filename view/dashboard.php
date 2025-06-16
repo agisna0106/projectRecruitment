@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Form</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <head>
-        <nav>
-            <h2>Kopi<i class="keun">keun</i></h2>
-            <button>Logout</button>
-        </nav>
-    </head>
+<?php 
+require_once '../controller/kopiKontroller.php';
+include 'header.php';
 
-    
-    
+$kopi = new kopiKontroller();
+
+$datas = $kopi->select();
+?>
+
     <section class="body">
         <div class="kopi-container">
             <?php
-            for($i=0; $i<10; $i++):
+            foreach ($datas as $data) :
             ?>
                 <div class="kopi-card">
-                    <img class="kopi-image" src="../assets/americano.png" alt="">
-                    <p>Americano</p>
+                    <img class="kopi-image" src="../assets/<?= $data['foto'] ?>" alt="">
+                    <p><?= $data['nama_kopi'] ?></p>
                 </div>
-            <?php endfor?>
+            <?php endforeach?>
         </div>
         
     </section>

@@ -16,12 +16,14 @@ $datas = $kopi->select();
         ?>
             <div class="kopi-card">
                 <img class="kopi-image" src="../assets/<?= "$data[foto]" ?>" alt="">
-                <p><?= "$data[nama_kopi]" ?></p>
-                <p><?= "$data[harga]" ?></p>
+               <div>
+                 <h1><?= "$data[nama_kopi]" ?></h1>
+               </div>
+                <p>Rp. <?= "$data[harga]" ?></p>
                 <div class="btn-edit-delete">
+                    <a href="editKopi.php?id_kopi=<?= $data['id_kopi'] ?>"><button class="btn-edit">Edit</button></a>
                     <form action="" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                         <input type="hidden" name="id_kopi" value="<?= "$data[id_kopi]" ?>">
-                        <button class="btn-edit">Edit</button>
                         <button class="btn-delete" name="delete">Hapus</button>
                     </form>
                     <?php

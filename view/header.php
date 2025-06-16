@@ -9,7 +9,9 @@
 <body>
     <head>
         <nav>
-            <h2>Kopi<i class="keun">keun</i></h2>
-            <button>Logout</button>
+            <div class="nav-container">
+                <h2>Kopi<i class="keun">keun</i></h2>
+                <button>Logout</button>
+            </div>
         </nav>
     </head>
