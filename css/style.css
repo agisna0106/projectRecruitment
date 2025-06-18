@@ -1,11 +1,12 @@
 body {
     margin: 0;
 }
+
 nav {
     background-color: brown;
 }
 
-.nav-container{
+.nav-container {
     margin: 0 1.5em;
     display: flex;
     flex-direction: row;
@@ -74,7 +75,7 @@ nav button {
 }
 
 .btn-add {
-    background-color: #6A4E42; 
+    background-color: #6A4E42;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -83,7 +84,7 @@ nav button {
 }
 
 .btn-add:hover {
-    background-color: #8B5E3C; 
+    background-color: #8B5E3C;
 }
 
 
@@ -103,11 +104,11 @@ nav button {
     padding: 1em;
     border-radius: 30px;
     /* https://smoothshadows.com/#djEsMSw1LDAuMDgsMjQsMzIsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
-box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
-  0px 5px 4px rgba(3, 7, 18, 0.03),
-  0px 12px 9px rgba(3, 7, 18, 0.05),
-  0px 20px 15px rgba(3, 7, 18, 0.06),
-  0px 32px 24px rgba(3, 7, 18, 0.08);
+    box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
+        0px 5px 4px rgba(3, 7, 18, 0.03),
+        0px 12px 9px rgba(3, 7, 18, 0.05),
+        0px 20px 15px rgba(3, 7, 18, 0.06),
+        0px 32px 24px rgba(3, 7, 18, 0.08);
 
 }
 
@@ -219,22 +220,23 @@ box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
 } */
 
 .label-input-file {
-  background-color: #f5d9b6;
-  color: black;
-  padding: 0.5rem;
-  font-family: sans-serif;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  margin-top: 0 !important;
+    background-color: #f5d9b6;
+    color: black;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0 !important;
 }
 
-#file-chosen{
-  margin-left: 0.3rem;
-  font-family: sans-serif;
+#file-chosen {
+    margin-left: 0.3rem;
+    font-family: sans-serif;
 }
-#file-chosen{
-  margin-left: 0.3rem;
-  font-family: sans-serif;
+
+#file-chosen {
+    margin-left: 0.3rem;
+    font-family: sans-serif;
 }
 
 .container-input-foto {
@@ -251,3 +253,71 @@ box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
     /* padding: 10px 10px; */
     /* margin: 5px 0;    */
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 30vw;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    color: #3E2C23;
+    align-items: center;
+}
+
+.modal-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-input form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.input-field {
+    width: 28vw;
+    border: #C7A17A;
+    border-radius: 50px;
+    color: #3E2C23;
+    background-color: #F5E9DA;
+    padding: 10px 10px;
+    margin: 5px 0;
+}
+
+.btn-submit {
+    width: 20vw;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6A4E42;
+    color: white;
+}
+
