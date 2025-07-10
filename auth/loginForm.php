@@ -1,11 +1,9 @@
 <?php 
 require_once 'login.php';
 
-$login = new Login();
+$auth = new Login();
+$auth->login();
 
-if(isset($_POST['login'])) {
-    $login->login();
-}
 ?>
 
 <!DOCTYPE html>

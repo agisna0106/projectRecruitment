@@ -11,7 +11,12 @@
         <nav>
             <div class="nav-container">
                 <h2>Kopi<i class="keun">keun</i></h2>
-                <button>Logout</button>
+                <div class="menu-container">
+                    <a href="dashboard.php">Dashboard</a>
+                    <a href="kopi.php">Kopi</a>
+                    <a href="users.php">Users</a>
+                    <button>Logout</button>
+                </div>
             </div>
         </nav>
     </head>

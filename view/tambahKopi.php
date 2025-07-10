@@ -13,15 +13,13 @@ if (isset($_POST['submit'])) {
             <label for="nama_kopi">Nama Kopi : </label>
             <input type="text" name="nama_kopi" id="nama_kopi">
             <label for="harga">Harga Jual : </label>
-            <div>
-                Rp.<input type="number" name="harga" id="harga" required>
-            </div>
+            <input type="number" name="harga" id="harga" required>
             <label for="foto">Foto Kopi : </label>
            <div class="container-input-foto">
-                <input type="file" id="actual-btn" hidden/>
+                <input type="file" name="foto" id="foto" accept="image/*" hidden/>
 
                 <!-- our custom upload button -->
-                <label for="actual-btn" class="label-input-file">Choose File</label>
+                <label for="foto" class="label-input-file">Choose File</label>
 
                 <!-- name of file chosen -->
                 <span id="file-chosen">No file chosen</span>
@@ -32,7 +30,7 @@ if (isset($_POST['submit'])) {
 
 </section>
 <script>
-    const actualBtn = document.getElementById('actual-btn');
+    const actualBtn = document.getElementById('foto');
 
     const fileChosen = document.getElementById('file-chosen');
 

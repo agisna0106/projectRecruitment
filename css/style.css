@@ -31,41 +31,65 @@ nav button {
     padding: 5px 8px;
 }
 
+.menu-container a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
 .loginregister {
-    min-height: 100vh;
-    background-color: #f0f0f0f0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    max-width: 400px;
+    margin: 60px auto;
+    background-color: #f5e9da;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loginregister h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #5a3825;
+}
+
+.loginregister h2 i {
+    font-weight: normal;
+    color: #c97c5d;
 }
 
 .cardlr {
-    width: 50vw;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
 }
 
 .cardlr label {
-    margin-top: 10px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #5a3825;
 }
 
 .cardlr input {
-    border-radius: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #c9b3a0;
+    background-color: #fff;
 }
 
 .cardlr button {
-    margin-top: 20px;
-    padding: 5px;
-    border: none;
-    border-radius: 20px;
-    background-color: blue;
+    padding: 10px;
+    background-color: #c97c5d;
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cardlr button:hover {
+    background-color: #a8684e;
 }
 
 .action-bar {
@@ -320,4 +344,3 @@ nav button {
     background-color: #6A4E42;
     color: white;
 }
-

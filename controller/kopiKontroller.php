@@ -49,6 +49,7 @@ class kopiKontroller
         $query->execute() or die($this->db->mysqli->error);
         header("Location: ../view/kopi.php");
         exit;
+        return $sql;
     }
 
     public function updateNPhoto() 

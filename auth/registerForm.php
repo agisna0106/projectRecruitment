@@ -10,9 +10,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register | KopiKeun</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -22,10 +22,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="cardlr">
                 <label for="name">Nama : </label>
                 <input type="text" name="name" id="name">
+
                 <label for="username">Username : </label>
                 <input type="text" name="username" id="username" required>
+
                 <label for="password">Password : </label>
                 <input type="password" name="password" id="password">
+                
                 <button type="submit" name="register" value="register">REGISTER</button>
             </div>
         </form>

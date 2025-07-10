@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             </div>
             <label for="foto">Foto Kopi : </label>
             <input type="file" name="foto" id="foto" accept="image/*" >
-            <button type="submit" name="submit">Tambah</button>
+            <button type="submit" name="submit">Edit</button>
         </div>
     </form>
     <?php endforeach ?>

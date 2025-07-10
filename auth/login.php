@@ -1,32 +1,46 @@
 <?php
+session_start();
 
 require_once '../model/Database.php';
 
 class Login {
-    public $db;
+    private $conn;
 
     public function __construct()
     {
-        $this->db = new Database();
+        $db = new Database();
+        $this->conn = $db->mysqli;
     }
 
     public function login() 
     {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
 
-        $get_password = "SELECT username, password FROM user WHERE username='$username'";
-        $result = $this->db->mysqli->prepare($get_password);
-        if($result == null) {
-            header("Location: loginForm.php");
-            exit;
-        }
-        if($username == $get_password['username'] AND $password == $get_password['password']) {
-            header("Location: ../view/kopi.php");
-            exit;
-        } else {
-            header("Location: loginForm.php");
-            exit;
+            $stmt = $this->conn->prepare("SELECT id, name, username, password, role FROM users WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            if($result->num_rows === 1) {
+                $user = $result->fetch_assoc();
+
+                if(password_verify($password, $user['password'])) {
+                    $_SESSION['user'] = [
+                        'name' => $user['name'],
+                        'role' => $user['role']
+                    ];
+                    header("Location: ../view/dashboard.php");
+                    exit;
+                } else {
+                    $_SESSION['error'] = "Password salah!";
+                    header("Location: loginForm.php");
+                    exit;
+                }
+
+                $stmt->close();
+            }
         }
     }
 }
