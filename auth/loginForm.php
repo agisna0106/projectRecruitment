@@ -23,7 +23,7 @@ $auth->login();
                 <input type="text" name="username" id="username" required>
                 <label for="password">Password : </label>
                 <input type="password" name="password" id="password">
-                <button type="submit" name="login" value="login">REGISTER</button>
+                <button type="submit" name="login" value="login">LOGIN</button>
             </div>
         </form>
     </section>

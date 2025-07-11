@@ -28,9 +28,20 @@ class Login {
 
                 if(password_verify($password, $user['password'])) {
                     $_SESSION['user'] = [
+                        'id' => $user['id'],
                         'name' => $user['name'],
                         'role' => $user['role']
                     ];
+                    if ($user) {
+                        $_SESSION['user'] = $user;
+
+                        if ($user['role'] == 2) {
+                            header("Location: ../view/transaksi.php"); 
+                        } else {
+                            header("Location: ../view/dashboard.php"); 
+                        }
+                        exit;
+                    }
                     header("Location: ../view/dashboard.php");
                     exit;
                 } else {

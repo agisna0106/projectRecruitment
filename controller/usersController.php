@@ -10,10 +10,18 @@ class usersController {
         $this->db = new Database();
     }
 
-    public function select()
+    public function select($role = null)
     {
-        $sql = "SELECT * FROM users";
-        $result = $this->db->mysqli->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
+        if ($role !== null) {
+            $stmt = $this->db->mysqli->prepare("SELECT * FROM users WHERE role = ?");
+            $stmt->bind_param("i", $role);
+        } else {
+            $stmt = $this->db->mysqli->prepare("SELECT * FROM users");
+        }
+
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     }
 }
