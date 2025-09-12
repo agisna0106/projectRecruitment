@@ -16,6 +16,7 @@ $datas = $kopi->select();
                     <img class="kopi-image" src="../assets/<?= $data['foto'] ?>" alt="">
                     <div>
                         <h1><?= "$data[nama_kopi]" ?></h1>
+                        <h2>Rp.<?= "$data[harga]" ?></h2>
                     </div>
                 </div>
             <?php endforeach?>

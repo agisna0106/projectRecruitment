@@ -17,7 +17,7 @@ $auth->login();
 <body>
     <section class="loginregister">
         <form action="<?= $_SERVER['PHP_SELF']?>" method="POST">
-            <h2>Kopi<i>keun</i></h2>
+            <a style="text-decoration: none;" href="../view/dashboard.php"><h2>Kopi<i>keun</i></h2></a>
             <div class="cardlr">
                 <label for="username">Username : </label>
                 <input type="text" name="username" id="username" required>

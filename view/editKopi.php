@@ -1,6 +1,11 @@
 <?php
 include 'header.php';
 
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 3) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 require_once '../controller/kopiKontroller.php';
 
 $kopi = new kopiKontroller();
@@ -24,7 +29,7 @@ if (isset($_POST['submit'])) {
             <input type="text" name="nama_kopi" id="nama_kopi" value="<?= $data['nama_kopi'] ?>" required>
             <label for="harga">Harga Jual : </label>
             <div>
-                Rp.<input type="number" name="harga" id="harga" value="<?= $data['harga'] ?>" required>
+                <input type="number" name="harga" id="harga" value="<?= $data['harga'] ?>" required>
             </div>
             <label for="foto">Foto Kopi : </label>
             <input type="file" name="foto" id="foto" accept="image/*" >

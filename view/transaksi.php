@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 2) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 require_once '../model/Database.php';
 
 $loggedIn = isset($_SESSION['user']);

@@ -1,5 +1,9 @@
 <?php
 include "header.php";
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 3) {
+    header("Location: dashboard.php");
+    exit;
+}
 require_once '../controller/usersController.php';
 
 $users = new usersController();
@@ -7,9 +11,66 @@ $filterRole = isset($_GET['role']) && $_GET['role'] !== '' ? intval($_GET['role'
 $datas = $users->select($filterRole);
 $datas = $users->select();
 ?>
+<style>
+    .table-container {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table thead {
+    background-color: #C97C5D;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+table tbody tr:hover {
+    background-color: #f1e7e1;
+}
+
+table button {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #6c757d;
+    cursor: pointer;
+}
+
+table button:hover {
+    background-color: #5a6268;
+}
+
+.btn-hapus {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #832b2b;
+    cursor: pointer;
+}
+
+.btn-hapus:hover {
+    background-color:rgb(170, 57, 57);
+}
+</style>
 
 <body>
-<section class="body">
+<section class="content-users">
 
     <!-- Tombol Tambah dan Modal -->
     <div class="action-bar">
@@ -67,6 +128,7 @@ $datas = $users->select();
                     <th>Nama</th>
                     <th>Username</th>
                     <th>Role</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,7 +156,7 @@ $datas = $users->select();
                         )">Edit</button>
                         <form action="user_delete.php" method="POST" style="display:inline;" onsubmit="return confirm('Yakin hapus user ini?')">
                             <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                            <button type="submit">Hapus</button>
+                            <button class="btn-hapus" type="submit">Hapus</button>
                         </form>
                     </td>
                 </tr>

@@ -7,24 +7,26 @@ $loggedIn = isset($_SESSION['user']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Form</title>
+    <title>KOPIkeun</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <head>
         <nav>
             <div class="nav-container">
-                <h2>Kopi<i class="keun">keun</i></h2>
+                <a style="text-decoration: none;" href="dashboard.php"><h2>Kopi<i class="keun">keun</i></h2></a>
                 <div class="menu-container">
-                    <a href="dashboard.php">Dashboard</a>
 
                     <?php if ($loggedIn && $_SESSION['user']['role'] == 1): ?>
+                        <a href="dashboard.php">Dashboard</a>
                         <a href="order.php">Order</a>
                     <?php elseif ($loggedIn && $_SESSION['user']['role'] == 2): ?>
                         <a href="transaksi.php">Transaksi</a>
                     <?php elseif ($loggedIn && $_SESSION['user']['role'] == 3): ?>
+                        <a href="dashboard_owner.php">Dashboard</a>
                         <a href="kopi.php">Kopi</a>
                         <a href="users.php">Users</a>
+                        <a href="keuangan.php">Pengeluaran</a>
                     <?php endif; ?>
 
                     <?php if ($loggedIn): ?>

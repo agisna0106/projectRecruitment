@@ -2,6 +2,11 @@
 session_start();
 require_once '../model/Database.php';
 
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 2) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 $db = new Database();
 $conn = $db->mysqli;
 

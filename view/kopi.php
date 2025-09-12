@@ -2,6 +2,11 @@
 include 'header.php';
 require_once '../controller/kopiKontroller.php';
 
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 3) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 $kopi = new kopiKontroller();
 
 $datas = $kopi->select();
